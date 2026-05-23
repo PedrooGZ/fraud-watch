@@ -1,0 +1,4 @@
+{
+  "threshold_cost": 0.02,
+  "max_alerts": 500
+}

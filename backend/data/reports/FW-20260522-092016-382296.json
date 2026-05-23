@@ -1,0 +1,158 @@
+{
+  "report_code": "FW-20260522-092016-382296",
+  "generated_at": "2026-05-22T09:20:16.393640+00:00",
+  "period": "last_7_days",
+  "format": "json",
+  "detail_level": "operational",
+  "sections": {
+    "summary": {
+      "total_predictions": 567,
+      "valid_predictions": 374,
+      "invalid_predictions": 193,
+      "review_count": 0,
+      "recent_predictions": 414,
+      "latest_prediction_created_at": "2026-05-22T09:20:16.152595+00:00",
+      "batch_jobs_count": 214,
+      "completed_batch_jobs": 214,
+      "failed_batch_jobs": 0,
+      "latest_batch_created_at": "2026-05-22T09:20:16.152595+00:00",
+      "active_policy": {
+        "threshold_cost": 0.24,
+        "max_alerts": 240,
+        "priority_mode": "impact",
+        "error_cost_mode": "reduce_fp"
+      },
+      "active_model": {
+        "id": 1,
+        "name": "fraud_model",
+        "model_type": "HistGradientBoosting + Isotonic",
+        "pr_auc": 0.797619,
+        "brier_score": 0.000608,
+        "n_features": 29,
+        "created_at": "2026-05-16T18:49:38.199464+00:00"
+      }
+    },
+    "batch_jobs": [
+      {
+        "id": 214,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:16.152595+00:00",
+        "finished_at": "2026-05-22T09:20:16.219891+00:00"
+      },
+      {
+        "id": 213,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:16.077586+00:00",
+        "finished_at": "2026-05-22T09:20:16.143428+00:00"
+      },
+      {
+        "id": 212,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:15.983027+00:00",
+        "finished_at": "2026-05-22T09:20:16.047896+00:00"
+      },
+      {
+        "id": 211,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:15.676832+00:00",
+        "finished_at": "2026-05-22T09:20:15.737856+00:00"
+      },
+      {
+        "id": 210,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:15.602883+00:00",
+        "finished_at": "2026-05-22T09:20:15.663265+00:00"
+      },
+      {
+        "id": 209,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:15.528376+00:00",
+        "finished_at": "2026-05-22T09:20:15.588519+00:00"
+      },
+      {
+        "id": 208,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:20:15.456045+00:00",
+        "finished_at": "2026-05-22T09:20:15.517389+00:00"
+      },
+      {
+        "id": 207,
+        "filename": "drift_check.csv",
+        "status": "completed",
+        "total_rows": 1,
+        "valid_rows": 1,
+        "invalid_rows": 0,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:18:09.686053+00:00",
+        "finished_at": "2026-05-22T09:18:09.691645+00:00"
+      },
+      {
+        "id": 206,
+        "filename": "for_download.csv",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:18:09.627770+00:00",
+        "finished_at": "2026-05-22T09:18:09.633955+00:00"
+      },
+      {
+        "id": 205,
+        "filename": "mixed.csv",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T09:18:09.559587+00:00",
+        "finished_at": "2026-05-22T09:18:09.564829+00:00"
+      }
+    ]
+  }
+}

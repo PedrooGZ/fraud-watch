@@ -1,0 +1,2 @@
+model,pr_auc,recall@1%,recall@0.5%,best_f1,best_thr,max_iter,learning_rate,max_depth,min_samples_leaf,l2_regularization,pos_weight_used
+hist_gradient_boosting,0.7379734724228855,0.8163265306122449,0.7959183673469388,0.8176795580110497,0.9563706153895097,300,0.05,6,50,0.0,577.2893401015228

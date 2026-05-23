@@ -1,0 +1,647 @@
+{
+  "report_code": "FW-20260522-111032-709308",
+  "generated_at": "2026-05-22T11:10:32.826415+00:00",
+  "period": "last_30_days",
+  "format": "json",
+  "detail_level": "operational",
+  "sections": {
+    "summary": {
+      "total_predictions": 692,
+      "valid_predictions": 457,
+      "invalid_predictions": 235,
+      "review_count": 0,
+      "recent_predictions": 539,
+      "latest_prediction_created_at": "2026-05-22T11:09:15.457707+00:00",
+      "batch_jobs_count": 264,
+      "completed_batch_jobs": 264,
+      "failed_batch_jobs": 0,
+      "latest_batch_created_at": "2026-05-22T11:09:15.457707+00:00",
+      "active_policy": {
+        "threshold_cost": 0.17,
+        "max_alerts": 240,
+        "priority_mode": "impact",
+        "error_cost_mode": "reduce_fp"
+      },
+      "active_model": {
+        "id": 1,
+        "name": "fraud_model",
+        "model_type": "HistGradientBoosting + Isotonic",
+        "pr_auc": 0.797619,
+        "brier_score": 0.000608,
+        "n_features": 29,
+        "created_at": "2026-05-16T18:49:38.199464+00:00"
+      }
+    },
+    "analytics": {
+      "fraud_evolution": {
+        "period_days": 30,
+        "points": [
+          {
+            "date": "2026-05-16",
+            "total_predictions": 20,
+            "review_count": 0,
+            "invalid_count": 7
+          },
+          {
+            "date": "2026-05-17",
+            "total_predictions": 24,
+            "review_count": 0,
+            "invalid_count": 8
+          },
+          {
+            "date": "2026-05-18",
+            "total_predictions": 12,
+            "review_count": 0,
+            "invalid_count": 4
+          },
+          {
+            "date": "2026-05-19",
+            "total_predictions": 12,
+            "review_count": 0,
+            "invalid_count": 4
+          },
+          {
+            "date": "2026-05-20",
+            "total_predictions": 85,
+            "review_count": 0,
+            "invalid_count": 31
+          },
+          {
+            "date": "2026-05-21",
+            "total_predictions": 285,
+            "review_count": 0,
+            "invalid_count": 96
+          },
+          {
+            "date": "2026-05-22",
+            "total_predictions": 254,
+            "review_count": 0,
+            "invalid_count": 85
+          }
+        ]
+      },
+      "risk_distribution": {
+        "low": 457,
+        "medium": 0,
+        "high": 0,
+        "total": 457,
+        "thresholds": {
+          "policy_threshold": 0.17,
+          "high_threshold": 0.5
+        }
+      },
+      "classification_summary": {
+        "review": 0,
+        "no_review": 457,
+        "invalid": 235,
+        "total": 692
+      },
+      "variable_importance": {
+        "source": "fallback",
+        "items": [
+          {
+            "feature": "V14",
+            "importance": 0.31
+          },
+          {
+            "feature": "V10",
+            "importance": 0.27
+          },
+          {
+            "feature": "V12",
+            "importance": 0.24
+          },
+          {
+            "feature": "Amount",
+            "importance": 0.2
+          },
+          {
+            "feature": "V17",
+            "importance": 0.18
+          },
+          {
+            "feature": "V4",
+            "importance": 0.16
+          },
+          {
+            "feature": "V11",
+            "importance": 0.14
+          },
+          {
+            "feature": "V3",
+            "importance": 0.13
+          },
+          {
+            "feature": "V16",
+            "importance": 0.11
+          },
+          {
+            "feature": "V2",
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    "drift": [
+      {
+        "id": 49,
+        "psi": 2.670163030979344,
+        "status": "drift",
+        "bins": 10,
+        "sample_size": 1,
+        "amount_multiplier": 1.0,
+        "ref_mean": 0.0015749748320322181,
+        "ref_p95": 0.0009802032745571602,
+        "new_mean": 0.0003527885456787927,
+        "new_p95": 0.0003527885456787927,
+        "summary_path": "batch_upload:264",
+        "created_at": "2026-05-22T11:09:15.457707+00:00"
+      }
+    ],
+    "model": {
+      "id": 1,
+      "name": "fraud_model",
+      "model_type": "HistGradientBoosting + Isotonic",
+      "artifact_path": "artifacts/fraud_model.joblib",
+      "metadata_path": "artifacts/fraud_model_metadata.json",
+      "pr_auc": 0.797619,
+      "brier_score": 0.000608,
+      "n_features": 29,
+      "is_active": true,
+      "created_at": "2026-05-16T18:49:38.199464+00:00"
+    },
+    "policy_changes": [
+      {
+        "id": 79,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.24,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.17,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "reason": "Actualización desde panel de configuración",
+        "created_at": "2026-05-22T10:33:40.370219+00:00"
+      },
+      {
+        "id": 78,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.27,
+          "max_alerts": 280,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.24,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "reason": "audit check",
+        "created_at": "2026-05-22T10:14:51.283966+00:00"
+      },
+      {
+        "id": 77,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.31,
+          "max_alerts": 321,
+          "priority_mode": "risk",
+          "error_cost_mode": "balanced"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.27,
+          "max_alerts": 280,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "reason": "history check",
+        "created_at": "2026-05-22T10:14:50.981861+00:00"
+      },
+      {
+        "id": 76,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.33,
+          "max_alerts": 333,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.31,
+          "max_alerts": 321,
+          "priority_mode": "risk",
+          "error_cost_mode": "balanced"
+        },
+        "reason": "test update",
+        "created_at": "2026-05-22T10:14:50.696426+00:00"
+      },
+      {
+        "id": 75,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.24,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.33,
+          "max_alerts": 333,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "reason": "admin allowed check",
+        "created_at": "2026-05-22T10:14:47.646636+00:00"
+      },
+      {
+        "id": 74,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.27,
+          "max_alerts": 280,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.24,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "reason": "audit check",
+        "created_at": "2026-05-22T09:26:30.164486+00:00"
+      },
+      {
+        "id": 73,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.31,
+          "max_alerts": 321,
+          "priority_mode": "risk",
+          "error_cost_mode": "balanced"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.27,
+          "max_alerts": 280,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "reason": "history check",
+        "created_at": "2026-05-22T09:26:30.131136+00:00"
+      },
+      {
+        "id": 72,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.24,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.31,
+          "max_alerts": 321,
+          "priority_mode": "risk",
+          "error_cost_mode": "balanced"
+        },
+        "reason": "test update",
+        "created_at": "2026-05-22T09:26:30.098153+00:00"
+      },
+      {
+        "id": 71,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.27,
+          "max_alerts": 280,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.24,
+          "max_alerts": 240,
+          "priority_mode": "impact",
+          "error_cost_mode": "reduce_fp"
+        },
+        "reason": "audit check",
+        "created_at": "2026-05-22T09:23:13.636086+00:00"
+      },
+      {
+        "id": 70,
+        "policy_id": 1,
+        "changed_by_user_id": null,
+        "old_values_json": {
+          "threshold_cost": 0.31,
+          "max_alerts": 321,
+          "priority_mode": "risk",
+          "error_cost_mode": "balanced"
+        },
+        "new_values_json": {
+          "threshold_cost": 0.27,
+          "max_alerts": 280,
+          "priority_mode": "mixed",
+          "error_cost_mode": "reduce_fn"
+        },
+        "reason": "history check",
+        "created_at": "2026-05-22T09:23:13.597127+00:00"
+      }
+    ],
+    "audit": [
+      {
+        "id": 606,
+        "user_id": null,
+        "event_type": "BATCH_UPLOADED",
+        "entity_type": "batch_job",
+        "entity_id": "264",
+        "details_json": {
+          "total_rows": 2,
+          "valid_rows": 1,
+          "invalid_rows": 1,
+          "review_count": 0,
+          "filename": "test_fraud_upload.csv",
+          "drift_run_id": 49
+        },
+        "created_at": "2026-05-22T11:09:15.457707+00:00"
+      },
+      {
+        "id": 605,
+        "user_id": null,
+        "event_type": "POLICY_UPDATED",
+        "entity_type": "policy",
+        "entity_id": "1",
+        "details_json": {
+          "old_values_json": {
+            "threshold_cost": 0.24,
+            "max_alerts": 240,
+            "priority_mode": "impact",
+            "error_cost_mode": "reduce_fp"
+          },
+          "new_values_json": {
+            "threshold_cost": 0.17,
+            "max_alerts": 240,
+            "priority_mode": "impact",
+            "error_cost_mode": "reduce_fp"
+          },
+          "reason": "Actualización desde panel de configuración"
+        },
+        "created_at": "2026-05-22T10:33:40.408765+00:00"
+      },
+      {
+        "id": 604,
+        "user_id": null,
+        "event_type": "BATCH_UPLOADED",
+        "entity_type": "batch_job",
+        "entity_id": "263",
+        "details_json": {
+          "total_rows": 1,
+          "valid_rows": 1,
+          "invalid_rows": 0,
+          "review_count": 0,
+          "filename": "drift_check.csv",
+          "drift_run_id": 48
+        },
+        "created_at": "2026-05-22T10:14:53.322991+00:00"
+      },
+      {
+        "id": 603,
+        "user_id": null,
+        "event_type": "BATCH_UPLOADED",
+        "entity_type": "batch_job",
+        "entity_id": "262",
+        "details_json": {
+          "total_rows": 2,
+          "valid_rows": 1,
+          "invalid_rows": 1,
+          "review_count": 0,
+          "filename": "for_download.csv",
+          "drift_run_id": 47
+        },
+        "created_at": "2026-05-22T10:14:53.249214+00:00"
+      },
+      {
+        "id": 602,
+        "user_id": null,
+        "event_type": "BATCH_UPLOADED",
+        "entity_type": "batch_job",
+        "entity_id": "261",
+        "details_json": {
+          "total_rows": 2,
+          "valid_rows": 1,
+          "invalid_rows": 1,
+          "review_count": 0,
+          "filename": "mixed.csv",
+          "drift_run_id": 46
+        },
+        "created_at": "2026-05-22T10:14:53.168916+00:00"
+      },
+      {
+        "id": 601,
+        "user_id": null,
+        "event_type": "BATCH_UPLOADED",
+        "entity_type": "batch_job",
+        "entity_id": "260",
+        "details_json": {
+          "total_rows": 1,
+          "valid_rows": 1,
+          "invalid_rows": 0,
+          "review_count": 0,
+          "filename": "valid.csv",
+          "drift_run_id": 45
+        },
+        "created_at": "2026-05-22T10:14:53.062127+00:00"
+      },
+      {
+        "id": 600,
+        "user_id": null,
+        "event_type": "BATCH_COMPLETED",
+        "entity_type": "batch_job",
+        "entity_id": "259",
+        "details_json": {
+          "total_rows": 2,
+          "valid_rows": 1,
+          "invalid_rows": 1,
+          "review_count": 0
+        },
+        "created_at": "2026-05-22T10:14:52.917197+00:00"
+      },
+      {
+        "id": 599,
+        "user_id": null,
+        "event_type": "PREDICTION_CREATED",
+        "entity_type": "prediction",
+        "entity_id": "682",
+        "details_json": {
+          "proba_fraud": 0.0003527885456787927,
+          "review": false,
+          "source": "single"
+        },
+        "created_at": "2026-05-22T10:14:52.876463+00:00"
+      },
+      {
+        "id": 598,
+        "user_id": null,
+        "event_type": "BATCH_COMPLETED",
+        "entity_type": "batch_job",
+        "entity_id": "258",
+        "details_json": {
+          "total_rows": 2,
+          "valid_rows": 1,
+          "invalid_rows": 1,
+          "review_count": 0
+        },
+        "created_at": "2026-05-22T10:14:52.807845+00:00"
+      },
+      {
+        "id": 597,
+        "user_id": null,
+        "event_type": "PREDICTION_CREATED",
+        "entity_type": "prediction",
+        "entity_id": "679",
+        "details_json": {
+          "proba_fraud": 0.0003527885456787927,
+          "review": false,
+          "source": "single"
+        },
+        "created_at": "2026-05-22T10:14:52.781612+00:00"
+      }
+    ],
+    "batch_jobs": [
+      {
+        "id": 264,
+        "filename": "test_fraud_upload.csv",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T11:09:15.457707+00:00",
+        "finished_at": "2026-05-22T11:09:15.509077+00:00"
+      },
+      {
+        "id": 263,
+        "filename": "drift_check.csv",
+        "status": "completed",
+        "total_rows": 1,
+        "valid_rows": 1,
+        "invalid_rows": 0,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:53.322991+00:00",
+        "finished_at": "2026-05-22T10:14:53.298217+00:00"
+      },
+      {
+        "id": 262,
+        "filename": "for_download.csv",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:53.249214+00:00",
+        "finished_at": "2026-05-22T10:14:53.223301+00:00"
+      },
+      {
+        "id": 261,
+        "filename": "mixed.csv",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:53.168916+00:00",
+        "finished_at": "2026-05-22T10:14:53.143397+00:00"
+      },
+      {
+        "id": 260,
+        "filename": "valid.csv",
+        "status": "completed",
+        "total_rows": 1,
+        "valid_rows": 1,
+        "invalid_rows": 0,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:53.062127+00:00",
+        "finished_at": "2026-05-22T10:14:53.061432+00:00"
+      },
+      {
+        "id": 259,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:52.905379+00:00",
+        "finished_at": "2026-05-22T10:14:52.870992+00:00"
+      },
+      {
+        "id": 258,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:52.800452+00:00",
+        "finished_at": "2026-05-22T10:14:52.764611+00:00"
+      },
+      {
+        "id": 257,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:52.712142+00:00",
+        "finished_at": "2026-05-22T10:14:52.677001+00:00"
+      },
+      {
+        "id": 256,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:51.795248+00:00",
+        "finished_at": "2026-05-22T10:14:51.752903+00:00"
+      },
+      {
+        "id": 255,
+        "filename": "api_batch",
+        "status": "completed",
+        "total_rows": 2,
+        "valid_rows": 1,
+        "invalid_rows": 1,
+        "review_count": 0,
+        "error_message": null,
+        "created_at": "2026-05-22T10:14:51.660866+00:00",
+        "finished_at": "2026-05-22T10:14:51.617462+00:00"
+      }
+    ]
+  }
+}

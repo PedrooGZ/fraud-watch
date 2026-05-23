@@ -1,0 +1,19 @@
+:root {
+  --bg-top: #0b1728;
+  --bg-mid: #0f2235;
+  --bg-bottom: #063b2a;
+  --panel-1: #080f1c;
+  --panel-2: #111827;
+  --panel-3: #172033;
+  --border-soft: rgba(220, 230, 255, 0.65);
+  --text-main: #f4f7fb;
+  --text-soft: #d7dde8;
+  --muted: #8f99ab;
+  --btn-soft: #3f4a61;
+  --btn-main-start: #0f2b5e;
+  --btn-main-end: #0a5c3b;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+}

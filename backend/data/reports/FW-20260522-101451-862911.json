@@ -1,0 +1,174 @@
+{
+  "report_code": "FW-20260522-101451-862911",
+  "generated_at": "2026-05-22T10:14:51.896525+00:00",
+  "period": "last_30_days",
+  "format": "json",
+  "detail_level": "executive",
+  "sections": {
+    "summary": {
+      "total_predictions": 675,
+      "valid_predictions": 446,
+      "invalid_predictions": 229,
+      "review_count": 0,
+      "recent_predictions": 522,
+      "latest_prediction_created_at": "2026-05-22T10:14:51.795248+00:00",
+      "batch_jobs_count": 256,
+      "completed_batch_jobs": 256,
+      "failed_batch_jobs": 0,
+      "latest_batch_created_at": "2026-05-22T10:14:51.795248+00:00",
+      "active_policy": {
+        "threshold_cost": 0.24,
+        "max_alerts": 240,
+        "priority_mode": "impact",
+        "error_cost_mode": "reduce_fp"
+      },
+      "active_model": {
+        "id": 1,
+        "name": "fraud_model",
+        "model_type": "HistGradientBoosting + Isotonic",
+        "pr_auc": 0.797619,
+        "brier_score": 0.000608,
+        "n_features": 29,
+        "created_at": "2026-05-16T18:49:38.199464+00:00"
+      }
+    },
+    "analytics": {
+      "fraud_evolution": {
+        "period_days": 30,
+        "points": [
+          {
+            "date": "2026-05-16",
+            "total_predictions": 20,
+            "review_count": 0,
+            "invalid_count": 7
+          },
+          {
+            "date": "2026-05-17",
+            "total_predictions": 24,
+            "review_count": 0,
+            "invalid_count": 8
+          },
+          {
+            "date": "2026-05-18",
+            "total_predictions": 12,
+            "review_count": 0,
+            "invalid_count": 4
+          },
+          {
+            "date": "2026-05-19",
+            "total_predictions": 12,
+            "review_count": 0,
+            "invalid_count": 4
+          },
+          {
+            "date": "2026-05-20",
+            "total_predictions": 85,
+            "review_count": 0,
+            "invalid_count": 31
+          },
+          {
+            "date": "2026-05-21",
+            "total_predictions": 285,
+            "review_count": 0,
+            "invalid_count": 96
+          },
+          {
+            "date": "2026-05-22",
+            "total_predictions": 237,
+            "review_count": 0,
+            "invalid_count": 79
+          }
+        ]
+      },
+      "risk_distribution": {
+        "low": 446,
+        "medium": 0,
+        "high": 0,
+        "total": 446,
+        "thresholds": {
+          "policy_threshold": 0.24,
+          "high_threshold": 0.5
+        }
+      },
+      "classification_summary": {
+        "review": 0,
+        "no_review": 446,
+        "invalid": 229,
+        "total": 675
+      },
+      "variable_importance": {
+        "source": "fallback",
+        "items": [
+          {
+            "feature": "V14",
+            "importance": 0.31
+          },
+          {
+            "feature": "V10",
+            "importance": 0.27
+          },
+          {
+            "feature": "V12",
+            "importance": 0.24
+          },
+          {
+            "feature": "Amount",
+            "importance": 0.2
+          },
+          {
+            "feature": "V17",
+            "importance": 0.18
+          },
+          {
+            "feature": "V4",
+            "importance": 0.16
+          },
+          {
+            "feature": "V11",
+            "importance": 0.14
+          },
+          {
+            "feature": "V3",
+            "importance": 0.13
+          },
+          {
+            "feature": "V16",
+            "importance": 0.11
+          },
+          {
+            "feature": "V2",
+            "importance": 0.1
+          }
+        ]
+      }
+    },
+    "drift": [
+      {
+        "id": 44,
+        "psi": 2.670163030979344,
+        "status": "drift",
+        "bins": 10,
+        "sample_size": 1,
+        "amount_multiplier": 1.0,
+        "ref_mean": 0.0015749748320322181,
+        "ref_p95": 0.0009802032745571602,
+        "new_mean": 0.0003527885456787927,
+        "new_p95": 0.0003527885456787927,
+        "summary_path": "batch_upload:249",
+        "created_at": "2026-05-22T09:26:31.336834+00:00"
+      }
+    ],
+    "model": {
+      "id": 1,
+      "name": "fraud_model",
+      "model_type": "HistGradientBoosting + Isotonic",
+      "artifact_path": "artifacts/fraud_model.joblib",
+      "metadata_path": "artifacts/fraud_model_metadata.json",
+      "pr_auc": 0.797619,
+      "brier_score": 0.000608,
+      "n_features": 29,
+      "is_active": true,
+      "created_at": "2026-05-16T18:49:38.199464+00:00"
+    }
+  }
+}

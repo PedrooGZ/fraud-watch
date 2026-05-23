@@ -1,0 +1,146 @@
+{
+  "report_code": "FW-20260522-091808-832172",
+  "generated_at": "2026-05-22T09:18:08.854544+00:00",
+  "period": "last_30_days",
+  "format": "json",
+  "detail_level": "executive",
+  "sections": {
+    "summary": {
+      "total_predictions": 531,
+      "valid_predictions": 350,
+      "invalid_predictions": 181,
+      "review_count": 0,
+      "recent_predictions": 378,
+      "latest_prediction_created_at": "2026-05-22T09:18:08.556870+00:00",
+      "batch_jobs_count": 200,
+      "completed_batch_jobs": 200,
+      "failed_batch_jobs": 0,
+      "latest_batch_created_at": "2026-05-22T09:18:08.556870+00:00",
+      "active_policy": {
+        "threshold_cost": 0.24,
+        "max_alerts": 240,
+        "priority_mode": "impact",
+        "error_cost_mode": "reduce_fp"
+      },
+      "active_model": {
+        "id": 1,
+        "name": "fraud_model",
+        "model_type": "HistGradientBoosting + Isotonic",
+        "pr_auc": 0.797619,
+        "brier_score": 0.000608,
+        "n_features": 29,
+        "created_at": "2026-05-16T18:49:38.199464+00:00"
+      }
+    },
+    "analytics": {
+      "fraud_evolution": {
+        "period_days": 30,
+        "points": [
+          {
+            "date": "2026-05-16",
+            "total_predictions": 20,
+            "review_count": 0,
+            "invalid_count": 7
+          },
+          {
+            "date": "2026-05-17",
+            "total_predictions": 24,
+            "review_count": 0,
+            "invalid_count": 8
+          },
+          {
+            "date": "2026-05-18",
+            "total_predictions": 12,
+            "review_count": 0,
+            "invalid_count": 4
+          },
+          {
+            "date": "2026-05-19",
+            "total_predictions": 12,
+            "review_count": 0,
+            "invalid_count": 4
+          },
+          {
+            "date": "2026-05-20",
+            "total_predictions": 85,
+            "review_count": 0,
+            "invalid_count": 31
+          },
+          {
+            "date": "2026-05-21",
+            "total_predictions": 285,
+            "review_count": 0,
+            "invalid_count": 96
+          },
+          {
+            "date": "2026-05-22",
+            "total_predictions": 93,
+            "review_count": 0,
+            "invalid_count": 31
+          }
+        ]
+      },
+      "risk_distribution": {
+        "low": 350,
+        "medium": 0,
+        "high": 0,
+        "total": 350,
+        "thresholds": {
+          "policy_threshold": 0.24,
+          "high_threshold": 0.5
+        }
+      },
+      "classification_summary": {
+        "review": 0,
+        "no_review": 350,
+        "invalid": 181,
+        "total": 531
+      },
+      "variable_importance": {
+        "source": "fallback",
+        "items": [
+          {
+            "feature": "V14",
+            "importance": 0.31
+          },
+          {
+            "feature": "V10",
+            "importance": 0.27
+          },
+          {
+            "feature": "V12",
+            "importance": 0.24
+          },
+          {
+            "feature": "Amount",
+            "importance": 0.2
+          },
+          {
+            "feature": "V17",
+            "importance": 0.18
+          },
+          {
+            "feature": "V4",
+            "importance": 0.16
+          },
+          {
+            "feature": "V11",
+            "importance": 0.14
+          },
+          {
+            "feature": "V3",
+            "importance": 0.13
+          },
+          {
+            "feature": "V16",
+            "importance": 0.11
+          },
+          {
+            "feature": "V2",
+            "importance": 0.1
+          }
+        ]
+      }
+    }
+  }
+}
