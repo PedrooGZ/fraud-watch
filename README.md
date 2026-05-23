@@ -579,13 +579,10 @@ Para el desarrollo del proyecto se han utilizado tecnologías, librerías y docu
 ## Licencias
 
 
-Actualmente existe un archivo `LICENSE`, pero su contenido está pendiente de definir.
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](./LICENSE) para más información.
 
-Texto provisional:
+Copyright (c) 2026 Pedro Grimaldi Zambrano.
 
-```text
-Este proyecto se ha desarrollado con fines educativos como parte del ciclo de Desarrollo de Aplicaciones Multiplataforma (DAM).
-```
 
 \---
 
