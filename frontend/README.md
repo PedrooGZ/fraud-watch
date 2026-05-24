@@ -70,6 +70,8 @@ npm run build
 
 - `VITE_API_URL=http://127.0.0.1:8000`
 
+En despliegue con Docker/Kubernetes se recomienda `VITE_API_URL=/api`.
+
 ## Estructura principal
 
 ```text

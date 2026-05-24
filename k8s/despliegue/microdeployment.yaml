@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: fraud-watch
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: fraudwatchacr.azurecr.io/fraudwatch-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: fraudwatch-backend-secret
+                  key: DATABASE_URL
+
+            - name: MODEL_PATH
+              value: artifacts/fraud_model.joblib
+
+            - name: MODEL_METADATA_PATH
+              value: artifacts/fraud_model_metadata.json
+
+            - name: REVIEW_POLICY_PATH
+              value: review_policy.json
+
+            - name: PREDICTIONS_LOG_PATH
+              value: logs/predictions.jsonl
+
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: fraudwatch-backend-secret
+                  key: JWT_SECRET_KEY
+
+            - name: JWT_ALGORITHM
+              value: HS256
+
+            - name: JWT_ACCESS_TOKEN_EXPIRE_MINUTES
+              value: "1440"
+
+            - name: CORS_ALLOW_ORIGINS
+              value: "*"
+
+            - name: ROOT_PATH
+              value: ""

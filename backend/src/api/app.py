@@ -104,15 +104,26 @@ META_PATH = Path(os.getenv("MODEL_METADATA_PATH", str(DEFAULT_META_PATH)))
 LOG_PATH = Path(os.getenv("PREDICTIONS_LOG_PATH", str(DEFAULT_LOG_PATH)))
 POLICY_PATH = Path(os.getenv("REVIEW_POLICY_PATH", str(DEFAULT_POLICY_PATH)))
 
-app = FastAPI(title="Fraud Scoring API", version="1.3.0")
+DEFAULT_CORS_ALLOW_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost",
+    "http://localhost:80",
+]
+CORS_ALLOW_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("CORS_ALLOW_ORIGINS", "").split(",")
+    if origin.strip()
+]
+if not CORS_ALLOW_ORIGINS:
+    CORS_ALLOW_ORIGINS = DEFAULT_CORS_ALLOW_ORIGINS
+
+ROOT_PATH = os.getenv("ROOT_PATH", "").strip()
+
+app = FastAPI(title="Fraud Scoring API", version="1.3.0", root_path=ROOT_PATH)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost",
-        "http://localhost:80",
-    ],
+    allow_origins=CORS_ALLOW_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

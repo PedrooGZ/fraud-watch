@@ -49,9 +49,13 @@ Definidas en `backend/.env.example`:
 - `MODEL_METADATA_PATH`
 - `REVIEW_POLICY_PATH`
 - `PREDICTIONS_LOG_PATH`
+- `CORS_ALLOW_ORIGINS`
+- `ROOT_PATH`
 - `JWT_SECRET_KEY`
 - `JWT_ALGORITHM`
 - `JWT_ACCESS_TOKEN_EXPIRE_MINUTES`
+
+Para despliegue con Docker Compose en VM, usa `backend/.env.deploy.example` como plantilla.
 
 ## Arranque local (PowerShell)
 

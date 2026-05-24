@@ -22,6 +22,7 @@ htmlcov/
 # Env
 .env
 backend/.env
+backend/.env.deploy
 frontend/.env.local
 
 # Mantener ejemplos de entorno
@@ -59,3 +60,4 @@ backend/data/scores/
 # OS
 .DS_Store
 Thumbs.db
+fraud_watch.dump
