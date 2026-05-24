@@ -32,6 +32,10 @@ Implementado con React + Vite, autenticacion real y consumo de API backend.
 
 Cliente central: `src/services/api.js`
 
+Comportamiento de `BASE_URL`:
+- Usa `import.meta.env.VITE_API_URL` si esta definida.
+- Si no esta definida, usa `/api` por defecto.
+
 Incluye, entre otros:
 
 - `register`, `login`, `getMe`
@@ -70,7 +74,25 @@ npm run build
 
 - `VITE_API_URL=http://127.0.0.1:8000`
 
-En despliegue con Docker/Kubernetes se recomienda `VITE_API_URL=/api`.
+En despliegue con Docker Compose/Kubernetes se recomienda `VITE_API_URL=/api`.
+
+## Despliegue en VM con Docker Compose
+
+El frontend se construye con `VITE_API_URL=/api` y se sirve en Nginx.
+Nginx enruta `/api` al servicio backend (`http://backend:8000`) dentro de la red Docker.
+
+Comandos (desde raiz):
+
+```powershell
+docker compose -f docker-compose.deploy.yml up -d --build frontend
+```
+
+URL esperada en despliegue:
+- Frontend: `http://<IP-o-dominio-de-tu-VM>`
+
+Si hay errores de API en navegador:
+- Verifica que `backend` este `healthy` en `docker compose ps`.
+- Verifica que `CORS_ALLOW_ORIGINS` del backend incluya el dominio final del frontend.
 
 ## Estructura principal
 

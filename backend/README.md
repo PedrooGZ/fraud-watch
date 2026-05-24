@@ -44,6 +44,7 @@ backend/
 
 Definidas en `backend/.env.example`:
 
+- `APP_ENV`
 - `DATABASE_URL`
 - `MODEL_PATH`
 - `MODEL_METADATA_PATH`
@@ -56,6 +57,10 @@ Definidas en `backend/.env.example`:
 - `JWT_ACCESS_TOKEN_EXPIRE_MINUTES`
 
 Para despliegue con Docker Compose en VM, usa `backend/.env.deploy.example` como plantilla.
+
+Notas:
+- `DATABASE_URL` debe apuntar a PostgreSQL Flexible Server con `sslmode=require`.
+- `ROOT_PATH` se deja vacio por defecto. Solo usalo si publicas backend bajo prefijo (ejemplo: `/api`).
 
 ## Arranque local (PowerShell)
 
@@ -79,6 +84,32 @@ pip install -r requirements.txt
 
 API local: `http://127.0.0.1:8000`  
 Swagger: `http://127.0.0.1:8000/docs`
+
+## Despliegue en VM con Docker Compose
+
+Este backend se despliega con el compose de raiz `docker-compose.deploy.yml`.
+En ese flujo se usa PostgreSQL externo (Azure Flexible Server) y no se levanta contenedor `postgres`.
+
+Pasos minimos:
+
+```powershell
+# desde raiz del proyecto
+Copy-Item backend/.env.deploy.example backend/.env.deploy
+# editar backend/.env.deploy con DATABASE_URL y JWT_SECRET_KEY reales
+
+docker compose -f docker-compose.deploy.yml --profile init up db-init
+docker compose -f docker-compose.deploy.yml up -d --build
+```
+
+Equivalente Linux:
+
+```bash
+cp backend/.env.deploy.example backend/.env.deploy
+# editar backend/.env.deploy con DATABASE_URL y JWT_SECRET_KEY reales
+
+docker compose -f docker-compose.deploy.yml --profile init up db-init
+docker compose -f docker-compose.deploy.yml up -d --build
+```
 
 ## Endpoints principales
 
@@ -163,5 +194,3 @@ Compatibilidad por archivo:
 cd backend
 .\.venv\Scripts\python -m pytest -q -p no:cacheprovider -W default
 ```
-
-Estado validado reciente: `54 passed`.
