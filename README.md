@@ -530,17 +530,7 @@ Cada modificación queda registrada en el histórico de política y en auditorí
 
 \---
 
-## Enlace a la documentación
-
-Por rellenar: enlace a la documentación del proyecto.
-
-Ejemplo:
-
-```markdown
-\\\[Documentación del proyecto](Por rellenar)
-```
-
-Documentación existente en el repositorio:
+## Documentación
 
 * `README.md`
 * `backend/README.md`
